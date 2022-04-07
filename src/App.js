@@ -1,11 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import {Input ,Button} from "antd";
+import woman  from './assests/woman.jpg'
+import {useState} from "react";
 
-function App() {
+const  App = () => {
+    const [count , setCount] = useState(12);
+    const [password , setPassWord ]  = useState('')
+
+
   return (
-    <div className="App">
-      ho
+      <div className='background'>
+           <img style={{width:'100vw', height:'100vh',filter: `blur(${count}px) ` }} src={woman} />
+
+        <div className='form-card'>
+            <p className='header'>Image Password Strength</p>
+            <p className='paragraph'>Change the password to see the effect</p>
+                <label className='label'>Email: </label>
+                <Input label="name"
+                       style={{padding: '6px'}}
+                       placeholder="Enter email"
+                />
+            <label className='label'>Password: </label>
+                <Input  onChange={(e) => setPassWord(e.target.value)}
+                        style={{padding: '6px'}}
+                        placeholder="Enter password"/>
+                <Button
+                    onClick={() => setCount(count - password.length)}
+                    className='submit'
+                        value="large"
+                        shape="rectangle"
+                        type="primary"
+                        >
+                       Submit
+                </Button>
     </div>
+      </div>
   );
 }
 
