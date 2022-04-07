@@ -7,9 +7,21 @@ const  App = () => {
     const [count , setCount] = useState(80);
     const [password , setPassWord ]  = useState('');
 
+    // const findBlur = () => {
+    //     if(password.length >= 12){
+    //     let nr = count - ((count - 12) + password.length);
+    //     setCount(nr)
+    //     }else if(count <= 12) {
+    //         return count;
+    //     }
+    //     return count;
+    // }
+    // console.log(findBlur() , 'find')
+
+
   return (
       <div className='background'>
-           <img style={{width:'100vw', height:'100vh',filter: `blur(${count - ((count - 12) + password.length)}px) ` }} src={jordanCardo} />
+           <img style={{width:'100vw', height:'100vh',filter: `blur(${count - ((count - 12) + password.length)}px) `}} src={jordanCardo} />
 
         <div className='form-card'>
             <div style={{marginBottom:'10px'}}>
