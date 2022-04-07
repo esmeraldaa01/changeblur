@@ -7,15 +7,6 @@ const  App = () => {
     const [count , setCount] = useState(80);
     const [password , setPassWord ]  = useState('');
 
-    // const findBlur = () => {
-    //     if(password.length >= 12){
-    //     let nr = count - ((count - 12) + password.length);
-    //     setCount(nr)
-    //     }else if(count <= 12) {
-    //         return count;
-    //     }
-    //     return count;
-    // }
     // console.log(findBlur() , 'find')
 
 
