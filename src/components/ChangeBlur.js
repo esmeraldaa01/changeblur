@@ -3,28 +3,27 @@ import { Input, Button } from "antd";
 import jordanCardo from "./assests/jordanCardo.jpg";
 import { useState } from "react";
 
-const maxCharacters = 80;
-const ceilingPixels = 15;
-
 const App = () => {
+  const maxCharacters = 100;
+  const ceilingPixels = 12;
+
+
   const [password, setPassWord] = useState("");
 
   const findBlur = () => {
-    const ratio = 1 - password.length / maxCharacters;
-    const pixels = ceilingPixels * ratio;
-
-    return pixels;
+    const nrDivided =  maxCharacters / ceilingPixels ;
+   return nrDivided;
   };
 
   console.log(findBlur(), "count");
-
+  //count / 12
   return (
     <div className="background">
       <img
         style={{
           width: "100vw",
           height: "100vh",
-          filter: `blur(${findBlur()}px) `,
+          filter: `blur(${maxCharacters - (findBlur() * password.length)}px) `,
         }}
         src={jordanCardo}
       />
